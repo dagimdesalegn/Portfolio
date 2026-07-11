@@ -177,6 +177,7 @@ body {
     10%, 20% { transform: rotate(-10deg); }
     30%, 50%, 70%, 90% { transform: rotate(10deg); }
     40%, 60%, 80% { transform: rotate(-10deg); }
+}
 
 .hero-title {
     font-size: 3.5rem;
