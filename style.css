@@ -382,54 +382,88 @@ body {
 
 .about-content {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1fr;
     gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .about-text h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
     color: var(--text-primary);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
 }
 
 .about-text p {
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-    font-size: 1.05rem;
-    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    opacity: 0.95;
 }
 
 .about-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
+    gap: 2.5rem;
+    margin-top: 4rem;
+    padding: 3rem 0;
 }
 
 .stat {
     text-align: center;
-    padding: 1.5rem;
-    background: rgba(30, 64, 175, 0.1);
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.15), rgba(124, 58, 237, 0.15));
+    border-radius: 16px;
+    border: 2px solid var(--border-color);
     transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease;
+}
+
+.stat:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.stat:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.stat:nth-child(3) {
+    animation-delay: 0.4s;
 }
 
 .stat:hover {
-    background: rgba(30, 64, 175, 0.2);
-    transform: translateY(-5px);
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.25), rgba(124, 58, 237, 0.25));
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+    box-shadow: 0 15px 40px rgba(6, 182, 212, 0.2);
 }
 
 .stat h4 {
-    font-size: 2rem;
-    color: var(--accent-color);
-    margin-bottom: 0.5rem;
+    font-size: 2.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.8rem;
+    letter-spacing: -1px;
 }
 
 .stat p {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.3px;
 }
 
 .about-info {
