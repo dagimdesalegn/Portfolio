@@ -15,6 +15,22 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
+// ===== SCREENSHOT GALLERY FUNCTION =====
+function switchImage(index) {
+    const images = document.querySelectorAll('.gallery-image');
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    
+    images.forEach(img => img.classList.remove('active'));
+    thumbnails.forEach(thumb => thumb.classList.remove('active'));
+    
+    if (images[index]) {
+        images[index].classList.add('active');
+    }
+    if (thumbnails[index]) {
+        thumbnails[index].classList.add('active');
+    }
+}
+
 // ===== SMOOTH SCROLL ENHANCEMENT =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
