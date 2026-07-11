@@ -1378,6 +1378,15 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .gallery-thumbnails {
+        gap: 0.5rem;
+    }
+
+    .thumbnail {
+        width: 60px;
+        height: 45px;
+    }
+
     .project-features {
         grid-template-columns: 1fr;
     }
