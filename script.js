@@ -1,369 +1,240 @@
-// ===== SECURE EMAILJS CONFIGURATION =====
-// Obfuscated to prevent easy extraction
-const EMAIL_CONFIG = (function() {
-    // Obfuscated service and template IDs
-    const serviceParts = ['service', '_', 'j7i2umf'];
-    const templateParts = ['template', '_', '20f4wwd'];
-    
-    return {
-        serviceID: serviceParts.join(''),
-        templateID: templateParts.join(''),
-        // EmailJS requires user_id to be exposed, but we obfuscate it
-        userID: ['P','0','i','p','f','B','B','J','x','I','T','O','3','m','p','0','X'].join('')
-    };
-})();
+// ===== MOBILE MENU TOGGLE =====
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.querySelector('.nav-menu');
 
-// ===== MAIN APPLICATION =====
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('%c🔒 DAGIM DESALEGN PORTFOLIO - SECURE SYSTEM', 'color: #00FF41; font-size: 16px; font-weight: bold;');
-    console.log('%c⚠️  Security: Site inspection allowed | Direct file access blocked', 'color: #FF003C; font-weight: bold;');
-    
-    // Initialize components
-    initThemeToggle();
-    initMobileMenu();
-    initScrollAnimations();
-    initSmoothScroll();
-    initContactForm();
-    initButtonEffects();
-    initTypingEffect();
-    
-    // Initialize EmailJS after DOM is loaded
-    setTimeout(() => {
-        if (typeof emailjs !== 'undefined') {
-            emailjs.init(EMAIL_CONFIG.userID);
-            console.log('📧 EmailJS initialized securely');
-        }
-    }, 100);
-});
-
-// ===== THEME TOGGLE =====
-function initThemeToggle() {
-    const themeToggle = document.getElementById('themeToggle');
-    const mobileThemeToggle = document.getElementById('mobileThemeToggle');
-    let isDark = true;
-    
-    function toggleTheme() {
-        isDark = !isDark;
-        document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-        const icon = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
-        themeToggle.innerHTML = icon;
-        if (mobileThemeToggle) mobileThemeToggle.innerHTML = icon;
-        localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
-    }
-    
-    themeToggle.addEventListener('click', toggleTheme);
-    if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
-    
-    // Load saved theme
-    const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
-    if (savedTheme === 'light') {
-        isDark = false;
-        document.documentElement.setAttribute('data-theme', 'light');
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        if (mobileThemeToggle) mobileThemeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    }
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
 }
 
-// ===== MOBILE MENU =====
-function initMobileMenu() {
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
+// Close menu when nav link is clicked
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
+});
+
+// ===== SMOOTH SCROLL ENHANCEMENT =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// ===== SCROLL ANIMATIONS =====
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = 'slideInLeft 0.8s ease forwards';
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.project-card, .skill-category, .timeline-content').forEach(el => {
+    observer.observe(el);
+});
+
+// ===== CONTACT FORM HANDLING =====
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = this.querySelector('input[type="text"]').value;
+        const email = this.querySelector('input[type="email"]').value;
+        const subject = this.querySelector('input[placeholder="Subject"]').value;
+        const message = this.querySelector('textarea').value;
+        
+        // Create email link (mailto)
+        const mailtoLink = `mailto:dagid6944@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+        
+        // Open default email client
+        window.location.href = mailtoLink;
+        
+        // Show success message
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Message sent! Opening email client...';
+        submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+        
+        setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.style.background = '';
+            this.reset();
+        }, 3000);
+    });
+}
+
+// ===== ACTIVE NAV LINK INDICATOR =====
+window.addEventListener('scroll', () => {
+    let current = '';
+    const sections = document.querySelectorAll('section');
     
-    if (!mobileMenuBtn || !mobileMenu) return;
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
     
-    function toggleMobileMenu() {
-        mobileMenu.classList.toggle('active');
-    }
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+            link.style.color = '#06b6d4';
+        } else {
+            link.style.color = '';
+        }
+    });
+});
+
+// ===== SCROLL TO TOP BUTTON =====
+const createScrollTopButton = () => {
+    const button = document.createElement('button');
+    button.id = 'scrollTopBtn';
+    button.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    button.style.cssText = `
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #1e40af, #7c3aed);
+        color: white;
+        border: none;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(30, 64, 175, 0.3);
+        font-size: 1.2rem;
+    `;
     
-    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    document.body.appendChild(button);
     
-    // Close menu when clicking on links
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            mobileMenu.classList.remove('active');
-            
-            setTimeout(() => {
-                const targetId = link.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            }, 100);
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            button.style.display = 'flex';
+        } else {
+            button.style.display = 'none';
+        }
+    });
+    
+    button.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
     });
     
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!mobileMenu.contains(e.target) && 
-            !mobileMenuBtn.contains(e.target) && 
-            mobileMenu.classList.contains('active')) {
-            mobileMenu.classList.remove('active');
-        }
+    button.addEventListener('mouseenter', () => {
+        button.style.transform = 'scale(1.1)';
+        button.style.boxShadow = '0 10px 25px rgba(30, 64, 175, 0.5)';
     });
-}
-
-// ===== SCROLL ANIMATIONS =====
-function initScrollAnimations() {
-    const fadeElements = document.querySelectorAll('.fade-in');
     
-    if (!fadeElements.length) return;
+    button.addEventListener('mouseleave', () => {
+        button.style.transform = 'scale(1)';
+        button.style.boxShadow = '0 5px 15px rgba(30, 64, 175, 0.3)';
+    });
+};
+
+createScrollTopButton();
+
+// ===== PARALLAX EFFECT FOR HERO =====
+window.addEventListener('scroll', () => {
+    const scrollY = window.pageYOffset;
+    const heroImage = document.querySelector('.hero-image');
+    
+    if (heroImage && scrollY < 800) {
+        heroImage.style.transform = `translateY(${scrollY * 0.5}px)`;
+    }
+});
+
+// ===== COUNTER ANIMATION =====
+const animateCounters = () => {
+    const stats = document.querySelectorAll('.stat h4');
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-    
-    fadeElements.forEach(el => observer.observe(el));
-}
-
-// ===== SMOOTH SCROLL =====
-function initSmoothScroll() {
-    document.querySelectorAll('.nav-link').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-}
-
-// ===== CONTACT FORM =====
-function initContactForm() {
-    const contactForm = document.getElementById('contact-form');
-    const submitBtn = document.getElementById('submitBtn');
-    const clearBtn = document.getElementById('clearBtn');
-    const formStatus = document.getElementById('formStatus');
-    
-    if (!contactForm || !submitBtn || !clearBtn || !formStatus) return;
-    
-    const statusText = formStatus.querySelector('.status-text');
-    const statusIcon = formStatus.querySelector('.status-icon i');
-    
-    // Clear form
-    clearBtn.addEventListener('click', () => {
-        contactForm.reset();
-        formStatus.classList.remove('visible', 'success', 'error');
-        formStatus.classList.add('visible');
-        statusIcon.className = 'fas fa-satellite-dish';
-        statusText.textContent = 'Ready for transmission...';
-        
-        setTimeout(() => {
-            formStatus.classList.remove('visible');
-        }, 2000);
-    });
-    
-    // Form validation
-    function validateForm() {
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
-        
-        if (!name || name.length < 2) {
-            showError('Please enter a valid name (min 2 characters)');
-            return false;
-        }
-        
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!email || !emailRegex.test(email)) {
-            showError('Please enter a valid email address');
-            return false;
-        }
-        
-        if (!message || message.length < 10) {
-            showError('Please enter a message with at least 10 characters');
-            return false;
-        }
-        
-        return true;
-    }
-    
-    function showError(message) {
-        formStatus.classList.remove('success');
-        formStatus.classList.add('error', 'visible');
-        statusIcon.className = 'fas fa-exclamation-triangle';
-        statusText.textContent = message;
-        
-        setTimeout(() => {
-            formStatus.classList.remove('visible');
-        }, 5000);
-    }
-    
-    function showSuccess(message) {
-        formStatus.classList.remove('error');
-        formStatus.classList.add('success', 'visible');
-        statusIcon.className = 'fas fa-check-circle';
-        statusText.textContent = message;
-    }
-    
-    function showLoading() {
-        formStatus.classList.remove('success', 'error');
-        formStatus.classList.add('visible');
-        statusIcon.className = 'fas fa-satellite-dish fa-spin';
-        statusText.textContent = 'Establishing secure connection...';
-    }
-    
-    // SECURE EMAIL SENDING FUNCTION
-    async function sendSecureEmail(formData) {
-        // This is the key fix - EmailJS requires these parameters in the payload
-        // We obfuscate them as much as possible
-        const payload = {
-            lib_version: "3.12.1",
-            user_id: EMAIL_CONFIG.userID,
-            service_id: EMAIL_CONFIG.serviceID,
-            template_id: EMAIL_CONFIG.templateID,
-            template_params: {
-                from_name: formData.from_name,
-                from_email: formData.from_email,
-                message: formData.message,
-                to_email: 'dagid6944@gmail.com',
-                timestamp: new Date().toLocaleString()
-            }
-        };
-        
-        // Send via EmailJS API
-        return emailjs.send(
-            EMAIL_CONFIG.serviceID,
-            EMAIL_CONFIG.templateID,
-            {
-                from_name: formData.from_name,
-                from_email: formData.from_email,
-                message: formData.message,
-                to_email: 'dagid6944@gmail.com'
-            }
-        );
-    }
-    
-    // Form submission
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        if (!validateForm()) return;
-        
-        // Disable submit button
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>TRANSMITTING...</span>';
-        
-        // Show loading status
-        showLoading();
-        
-        try {
-            const formData = {
-                from_name: document.getElementById('name').value,
-                from_email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            };
-            
-            // Send email securely
-            await sendSecureEmail(formData);
-            
-            // Show success message
-            showSuccess('Message transmitted successfully! I\'ll get back to you soon.');
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Re-enable button after 3 seconds
-            setTimeout(() => {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>TRANSMIT MESSAGE</span>';
-                formStatus.classList.remove('visible');
-            }, 3000);
-            
-        } catch (error) {
-            console.error('Email error:', error);
-            
-            // Show error message
-            showError('Transmission failed. Please try again or email me directly at dagid6944@gmail.com');
-            
-            // Re-enable button
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>TRANSMIT MESSAGE</span>';
-            
-            // Hide status after 5 seconds
-            setTimeout(() => {
-                formStatus.classList.remove('visible');
-            }, 5000);
-        }
-    });
-}
-
-// ===== BUTTON EFFECTS =====
-function initButtonEffects() {
-    // Button glow effects
-    document.querySelectorAll('.btn-hire, .btn-cv, .btn-transmit').forEach(btn => {
-        const glow = btn.querySelector('.btn-glow');
-        if (!glow) return;
-        
-        btn.addEventListener('mouseenter', function() {
-            glow.style.transition = 'transform 0.6s ease';
-            glow.style.transform = 'translateX(100%)';
-        });
-        
-        btn.addEventListener('mouseleave', function() {
-            glow.style.transform = 'translateX(-100%)';
-        });
-    });
-    
-    // Hire button scroll
-    document.querySelectorAll('.hire-btn, .btn-hire').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            if (this.getAttribute('href') === '#contact') {
-                e.preventDefault();
-                const contactSection = document.getElementById('contact');
-                if (contactSection) {
-                    window.scrollTo({
-                        top: contactSection.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+                const target = entry.target;
+                const finalValue = target.textContent;
+                const numericValue = parseInt(finalValue);
+                let currentValue = 0;
+                
+                if (!isNaN(numericValue)) {
+                    const increment = numericValue / 30;
+                    const counter = setInterval(() => {
+                        currentValue += increment;
+                        if (currentValue >= numericValue) {
+                            target.textContent = finalValue;
+                            clearInterval(counter);
+                        } else {
+                            target.textContent = Math.floor(currentValue) + (finalValue.includes('+') ? '+' : '');
+                        }
+                    }, 30);
                 }
+                
+                observer.unobserve(target);
             }
         });
+    }, { threshold: 0.5 });
+    
+    stats.forEach(stat => observer.observe(stat));
+};
+
+document.addEventListener('DOMContentLoaded', animateCounters);
+
+// ===== FORM VALIDATION =====
+const validateForm = (form) => {
+    const inputs = form.querySelectorAll('input, textarea');
+    let isValid = true;
+    
+    inputs.forEach(input => {
+        if (!input.value.trim()) {
+            input.style.borderColor = '#FF003C';
+            isValid = false;
+        } else {
+            input.style.borderColor = '';
+        }
+        
+        if (input.type === 'email' && input.value) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(input.value)) {
+                input.style.borderColor = '#FF003C';
+                isValid = false;
+            }
+        }
+    });
+    
+    return isValid;
+};
+
+if (contactForm) {
+    contactForm.addEventListener('input', (e) => {
+        e.target.style.borderColor = '';
     });
 }
 
-// ===== SECURITY NOTE =====
-// ===== TYPING EFFECT =====
-function initTypingEffect() {
-    const typedElement = document.getElementById('typed-subtitle');
-    const text = 'FULL-STACK DEVELOPER';
-    let index = 0;
-    let isDeleting = false;
-    
-    function typeWriter() {
-        if (!isDeleting) {
-            typedElement.textContent = text.substring(0, index + 1);
-            index++;
-            if (index === text.length) {
-                isDeleting = true;
-                setTimeout(typeWriter, 2000); // Pause at end
-                return;
-            }
-        } else {
-            typedElement.textContent = text.substring(0, index - 1);
-            index--;
-            if (index === 0) {
-                isDeleting = false;
-            }
-        }
-        setTimeout(typeWriter, isDeleting ? 100 : 150);
-    }
-    
-    // Start typing effect after a short delay
-    setTimeout(typeWriter, 1000);
-}
+// ===== CONSOLE LOG =====
+console.log('%c👋 Welcome to Dagim\'s Portfolio!', 'color: #06b6d4; font-size: 16px; font-weight: bold;');
+console.log('%cFeel free to explore and get in touch!', 'color: #10b981; font-size: 12px;');
