@@ -152,19 +152,21 @@ body {
 
 .hero-text {
     animation: slideInLeft 0.8s ease;
+    padding-left: 60px;
 }
 
 .greeting {
     color: var(--accent-color);
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     animation: slideInDown 0.6s ease;
+    opacity: 0.9;
 }
 
 .greeting-icon {
@@ -180,10 +182,12 @@ body {
 }
 
 .hero-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 1rem;
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    animation: slideInLeft 0.8s ease 0.2s backwards;
+    color: var(--text-primary);
 }
 
 .highlight {
@@ -194,18 +198,22 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--accent-color);
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 1.5rem;
+    animation: slideInLeft 0.8s ease 0.3s backwards;
+    letter-spacing: 0.5px;
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: var(--text-secondary);
     margin-bottom: 2rem;
-    max-width: 500px;
+    max-width: 550px;
     line-height: 1.8;
+    animation: slideInLeft 0.8s ease 0.4s backwards;
+    opacity: 0.95;
 }
 
 .hero-buttons {
