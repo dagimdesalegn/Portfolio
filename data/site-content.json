@@ -1,0 +1,22 @@
+{
+  "about": {
+    "eyebrow": "About me",
+    "title": "A developer focused on useful, thoughtful products.",
+    "body": "Write your personal story here. This section is ready for you to replace with your own words."
+  },
+  "experience": [],
+  "certificates": [
+    {
+      "id": "3eda8b11-5dc0-480b-9b5c-1076509d9ecb",
+      "title": "Introduction to Artificial Intelligence (AI)",
+      "issuer": "IBM",
+      "date": "March 2025",
+      "imageUrl": "https://raw.githubusercontent.com/dagimdesalegn/Portfolio/main/public/assets/certificates/1795003182136-1000060653.jpg",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/K58T5HUXH54D",
+      "description": "",
+      "credentialId": "",
+      "visible": true,
+      "order": 1
+    }
+  ]
+}
