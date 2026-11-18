@@ -27,9 +27,13 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col items-start gap-4">
-            <a href="/assets/cv.pdf" download className="inline-flex w-fit items-center justify-center gap-2 rounded-xl border border-habesha-gold/70 bg-habesha-gold px-5 py-3 text-sm font-bold text-foreground shadow-lg transition hover:-translate-y-0.5 hover:bg-white">
-              <ArrowDownToLine size={16} /> Download CV
-            </a>
+            <a
+  href="/assets/certificates/cv.pdf"
+  download="cv.pdf"
+  className="inline-flex w-fit items-center justify-center gap-2 rounded-xl border border-habesha-gold/70 bg-habesha-gold px-5 py-3 text-sm font-bold text-foreground shadow-lg transition hover:-translate-y-0.5 hover:bg-white"
+>
+  <ArrowDownToLine size={16} /> Download CV
+</a>
             <div className="flex items-center gap-2">
               {socials.map(({ label, href, icon: Icon }) => (
                 <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} className="grid h-10 w-10 place-items-center rounded-xl border border-white/15 bg-white/5 text-white/70 transition hover:-translate-y-1 hover:border-habesha-gold hover:bg-habesha-gold hover:text-foreground">
