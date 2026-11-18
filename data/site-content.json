@@ -1,0 +1,47 @@
+{
+  "about": {
+    "eyebrow": "About me",
+    "title": "A developer focused on useful, thoughtful products.",
+    "body": "I’m Dagim Desalegn, a Full-Stack Developer from Ethiopia. I enjoy building useful digital products that are clear, reliable, and actually solve real problems.\n\nI graduated in Computer Science from Jimma University and have worked on projects like Erdataye, an emergency service app for rapid ambulance dispatch and live tracking, and ABJ Tutorial, an educational platform that has helped thousands of students. I’ve also completed certifications in web development, programming fundamentals, and AI.\n\nI care about thoughtful interfaces, clean code, and building things that make life a little easier for people."
+  },
+  "experience": [
+    {
+      "id": "08e6d478-09fb-4fd9-bb78-8e669a9c30ce",
+      "role": "Software engineer ",
+      "company": "Yosti Import and Export Trading Co.",
+      "period": "September 2026",
+      "description": "Develop and maintain the company’s websites, applications, databases, and digital platforms.\n· Handle backend development, system integration, testing, troubleshooting, and security.\n· Provide ongoing technical support and improve system reliability.",
+      "location": "Remote",
+      "technologies": [
+        "Php"
+      ],
+      "visible": true,
+      "order": 1
+    },
+    {
+      "id": "aa091721-5f74-4233-a019-d3699a5d2c6f",
+      "role": "",
+      "company": "",
+      "period": "",
+      "description": "",
+      "location": "",
+      "technologies": [],
+      "visible": true,
+      "order": 2
+    }
+  ],
+  "certificates": [
+    {
+      "id": "3eda8b11-5dc0-480b-9b5c-1076509d9ecb",
+      "title": "Introduction to Artificial Intelligence (AI)",
+      "issuer": "IBM",
+      "date": "March 2025",
+      "imageUrl": "https://raw.githubusercontent.com/dagimdesalegn/Portfolio/main/public/assets/certificates/1795003182136-1000060653.jpg",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/K58T5HUXH54D",
+      "description": "",
+      "credentialId": "",
+      "visible": true,
+      "order": 1
+    }
+  ]
+}

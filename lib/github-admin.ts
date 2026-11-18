@@ -1,0 +1,6 @@
+const repo = () => process.env.GITHUB_REPO || "dagimdesalegn/Portfolio";
+const branch = () => process.env.GITHUB_BRANCH || "main";
+function auth() { const token = process.env.GITHUB_TOKEN; if (!token) throw new Error("GITHUB_TOKEN is not configured."); return { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json", "Content-Type": "application/json" }; }
+export async function getRepoFile(path: string) { const r=await fetch(`https://api.github.com/repos/${repo()}/contents/${path}?ref=${branch()}`,{headers:auth(),cache:"no-store"}); if(!r.ok) throw new Error(`GitHub GET ${r.status}`); return r.json() as Promise<{content:string;sha:string}>; }
+export async function putRepoFile(path:string, content:Buffer|string, message:string, sha?:string) { const encoded=Buffer.from(content).toString("base64"); const body:any={message,content:encoded,branch:branch()}; if(sha) body.sha=sha; const r=await fetch(`https://api.github.com/repos/${repo()}/contents/${path}`,{method:"PUT",headers:auth(),body:JSON.stringify(body)}); if(!r.ok) throw new Error(`GitHub PUT ${r.status}: ${await r.text()}`); return r.json(); }
+export function rawUrl(path:string){return `https://raw.githubusercontent.com/${repo()}/${branch()}/${path}`;}
