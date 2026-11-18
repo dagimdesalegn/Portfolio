@@ -1,17 +1,12 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
 import {
   LogOut, Plus, Trash2, Save, Mail, Award, BriefcaseBusiness, Pencil,
   Upload, Eye, EyeOff, UserRound, Sparkles, CheckCircle2, X, ShieldCheck,
   MapPin, CalendarDays, ExternalLink
-import { useEffect, useState } from "react";
-import {
-  LogOut, Plus, Trash2, Save, Mail, Award, BriefcaseBusiness, Pencil, Upload, Eye, EyeOff
 } from "lucide-react";
 
-type Experience = {
   id:string; role:string; company:string; period:string; description:string;
   location?:string; technologies?:string[]; visible?:boolean; order?:number;
 };
