@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Sparkles, ArrowUpRight } from "lucide-react";
 
 export default function About({ content }: { content: { eyebrow: string; title: string; body: string } }) {
@@ -36,7 +35,6 @@ export default function About({ content }: { content: { eyebrow: string; title: 
               </p>
             ))}
           </div>
-=======
 export default function About({ content }: { content: { eyebrow: string; title: string; body: string } }) {
   return (
     <section id="about" className="ethiopian-section relative mx-auto max-w-7xl px-5 py-20 sm:px-7 sm:py-24">
@@ -47,7 +45,6 @@ export default function About({ content }: { content: { eyebrow: string; title: 
         </div>
         <div className="tibeb-grid rounded-[1.8rem] border border-habesha-gold/30 bg-white/60 p-7 shadow-tibeb sm:p-9">
           <p className="text-base leading-8 text-foreground/65">{content.body}</p>
->>>>>>> 3fda8ab8b1b004db546e42b4aa9fe66d77f12abd
         </div>
       </div>
     </section>
