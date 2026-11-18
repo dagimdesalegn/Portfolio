@@ -4,7 +4,21 @@
     "title": "A developer focused on useful, thoughtful products.",
     "body": "Write your personal story here. This section is ready for you to replace with your own words."
   },
-  "experience": [],
+  "experience": [
+    {
+      "id": "08e6d478-09fb-4fd9-bb78-8e669a9c30ce",
+      "role": "Software engineer ",
+      "company": "Yosti Import and Export Trading Co.",
+      "period": "September 2026",
+      "description": "Develop and maintain the company’s websites, applications, databases, and digital platforms.\n· Handle backend development, system integration, testing, troubleshooting, and security.\n· Provide ongoing technical support and improve system reliability.",
+      "location": "Remote",
+      "technologies": [
+        "Php"
+      ],
+      "visible": true,
+      "order": 1
+    }
+  ],
   "certificates": [
     {
       "id": "3eda8b11-5dc0-480b-9b5c-1076509d9ecb",
