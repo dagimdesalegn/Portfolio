@@ -1,17 +1,14 @@
 "use client";
 
-<<<<<<< HEAD
 import { useEffect, useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
 import {
   LogOut, Plus, Trash2, Save, Mail, Award, BriefcaseBusiness, Pencil,
   Upload, Eye, EyeOff, UserRound, Sparkles, CheckCircle2, X, ShieldCheck,
   MapPin, CalendarDays, ExternalLink
-=======
 import { useEffect, useState } from "react";
 import {
   LogOut, Plus, Trash2, Save, Mail, Award, BriefcaseBusiness, Pencil, Upload, Eye, EyeOff
->>>>>>> 3fda8ab8b1b004db546e42b4aa9fe66d77f12abd
 } from "lucide-react";
 
 type Experience = {
@@ -35,15 +32,12 @@ export default function AdminPage(){
   const [u,setU]=useState(""); const [p,setP]=useState("");
   const [content,setContent]=useState<Content>(empty);
   const [messages,setMessages]=useState<any[]>([]);
-<<<<<<< HEAD
   const [tab,setTab]=useState("about");
   const [status,setStatus]=useState("");
   const [editingExp,setEditingExp]=useState<string|null>(null);
   const [editingCert,setEditingCert]=useState<string|null>(null);
   const [editingAbout,setEditingAbout]=useState(false);
-=======
   const [tab,setTab]=useState("experience"); const [status,setStatus]=useState(""); const [editingCert,setEditingCert]=useState<string|null>(null);
->>>>>>> 3fda8ab8b1b004db546e42b4aa9fe66d77f12abd
 
   useEffect(()=>{
     fetch("/api/admin/content").then(async r=>{
@@ -75,7 +69,6 @@ export default function AdminPage(){
   async function save(){
     setStatus("Saving to GitHub...");
     const r=await fetch("/api/admin/content",{method:"PUT",headers:{"content-type":"application/json"},body:JSON.stringify(content)});
-<<<<<<< HEAD
     if(r.ok){
       setStatus("Saved successfully. Public content will refresh shortly.");
       setEditingAbout(false); setEditingExp(null); setEditingCert(null);
@@ -90,7 +83,6 @@ export default function AdminPage(){
       visible:true,order:c.experience.length+1
     }]}));
     setEditingExp(id);
-=======
     if(r.ok){setStatus("Saved to GitHub. Vercel will update the public content shortly.");}
     else {const j=await r.json();setStatus(j.message||"Save failed");}
   }
@@ -100,19 +92,15 @@ export default function AdminPage(){
       id:crypto.randomUUID(),role:"",company:"",period:"",description:"",
       location:"",technologies:[],visible:true,order:c.experience.length+1
     }]}));
->>>>>>> 3fda8ab8b1b004db546e42b4aa9fe66d77f12abd
   }
 
   function addCert(){
     const id=crypto.randomUUID();
     setContent(c=>({...c,certificates:[...c.certificates,{
-<<<<<<< HEAD
       id,title:"",issuer:"",description:"",date:"",credentialId:"",credentialUrl:"",
       imageUrl:"",visible:true,order:c.certificates.length+1
-=======
       id,title:"",issuer:"",description:"",date:"",
       credentialId:"",credentialUrl:"",imageUrl:"",visible:true,order:c.certificates.length+1
->>>>>>> 3fda8ab8b1b004db546e42b4aa9fe66d77f12abd
     }]}));
     setEditingCert(id);
   }
@@ -127,7 +115,6 @@ export default function AdminPage(){
 
   async function logout(){await fetch("/api/admin/logout",{method:"POST"});location.href="/admin";}
 
-<<<<<<< HEAD
   if(logged===null)return <main className="admin-shell grid min-h-screen place-items-center"><div className="admin-loading"><div className="admin-orb"/><p>Loading portfolio control…</p></div></main>;
 
   if(!logged)return (
@@ -140,7 +127,6 @@ export default function AdminPage(){
         <input type="password" value={p} onChange={e=>setP(e.target.value)} placeholder="Password" className="admin-input mt-3"/>
         <button className="admin-primary mt-5 w-full justify-center">Sign in</button>
         {status&&<p className="mt-3 text-center text-xs font-semibold text-terracotta">{status}</p>}
-=======
   if(logged===null)return <main className="grid min-h-screen place-items-center bg-background text-foreground">Loading...</main>;
 
   if(!logged)return (
@@ -152,12 +138,10 @@ export default function AdminPage(){
         <input type="password" value={p} onChange={e=>setP(e.target.value)} placeholder="Password" className="mt-3 w-full rounded-xl border border-habesha-gold/30 bg-white px-4 py-3 outline-none focus:border-terracotta"/>
         <button className="mt-5 w-full rounded-xl bg-adwa-green px-4 py-3 font-bold text-white">Sign in</button>
         {status&&<p className="mt-3 text-center text-xs text-terracotta">{status}</p>}
->>>>>>> 3fda8ab8b1b004db546e42b4aa9fe66d77f12abd
       </form>
     </main>
   );
 
-<<<<<<< HEAD
   const nav=[
     ["about","About",UserRound],["experience","Experience",BriefcaseBusiness],
     ["certificates","Certificates",Award],["messages","Messages",Mail]
@@ -191,7 +175,6 @@ export default function AdminPage(){
         {tab==="experience"&&<ExperienceManager content={content} setContent={setContent} editingExp={editingExp} setEditingExp={setEditingExp} updateExp={updateExp} addExp={addExp}/>}
         {tab==="certificates"&&<CertificateManager content={content} setContent={setContent} editingCert={editingCert} setEditingCert={setEditingCert} updateCert={updateCert} addCert={addCert} uploadFile={uploadFile}/>}
         {tab==="messages"&&<Messages messages={messages} loadMessages={loadMessages}/>}
-=======
   return (
     <main className="min-h-screen bg-background">
       <div className="mx-auto max-w-7xl px-5 py-8 sm:px-7">
@@ -293,13 +276,11 @@ export default function AdminPage(){
           <p className="text-xs text-foreground/45">{status}</p>
           <button onClick={save} className="inline-flex items-center justify-center gap-2 rounded-xl bg-adwa-green px-5 py-3 text-sm font-bold text-white"><Save size={15}/> Save changes</button>
         </div>
->>>>>>> 3fda8ab8b1b004db546e42b4aa9fe66d77f12abd
       </div>
     </main>
   );
 }
 
-<<<<<<< HEAD
 function AboutManager({content,setContent,editing,setEditing}:{content:Content;setContent:Dispatch<SetStateAction<Content>>;editing:boolean;setEditing:(v:boolean)=>void}){
   return <section className="mt-5">
     {!editing ? <article className="admin-content-card about-admin-card">
@@ -398,8 +379,6 @@ function Messages({messages,loadMessages}:{messages:any[];loadMessages:()=>void}
 }
 
 function Empty({text}:{text:string}){return <div className="admin-empty"><div className="admin-empty-icon"><Sparkles size={20}/></div><p>{text}</p></div>}
-=======
 function Empty({text}:{text:string}){
   return <div className="rounded-2xl border border-dashed border-habesha-gold/35 bg-white/60 p-7 text-center text-sm text-foreground/50">{text}</div>;
 }
->>>>>>> 3fda8ab8b1b004db546e42b4aa9fe66d77f12abd
