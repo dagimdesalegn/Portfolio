@@ -41,6 +41,18 @@
       "imageUrl": "https://raw.githubusercontent.com/dagimdesalegn/Portfolio/main/public/assets/certificates/1795024194792-1000061366.jpg",
       "visible": true,
       "order": 2
+    },
+    {
+      "id": "a4c60f22-13f6-40e9-8f88-34e9749772d5",
+      "title": "Certificate of Achievement",
+      "issuer": "JIMMA UNIVERSITY ",
+      "description": "For securing First (1st) Place in the Final Year Project Competition, Department of Computer Science, in recognition of outstanding innovation and excellence.\n\nProject Title: Ambulance Service App for Ethiopian Urban Area (Erdataye)\n\n",
+      "date": "26/06/2026",
+      "credentialId": "",
+      "credentialUrl": "",
+      "imageUrl": "https://raw.githubusercontent.com/dagimdesalegn/Portfolio/main/public/assets/certificates/1795025185262-1000061369.jpg",
+      "visible": true,
+      "order": 1
     }
   ]
 }
