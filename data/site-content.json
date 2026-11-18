@@ -10,11 +10,9 @@
       "role": "Software engineer ",
       "company": "Yosti Import and Export Trading Co.",
       "period": "September 2026",
-      "description": "Develop and maintain the company’s websites, applications, databases, and digital platforms.\n· Handle backend development, system integration, testing, troubleshooting, and security.\n· Provide ongoing technical support and improve system reliability.",
+      "description": "JOB RESPONSIBILITIES\n\nAs a Software Developer, the Employee’s responsibilities include, but are not limited to:\n\n- Designing, developing, testing, and maintaining software applications and systems.\n- Developing and maintaining backend systems, databases, APIs, and other technical solutions.\n- Maintaining and improving the Company’s websites, applications, and digital platforms.\n- Troubleshooting, debugging, and resolving technical and software-related issues.\n- Participating in software planning, system design, development, and implementation.\n- Ensuring the security, performance, reliability, and availability of Company systems.\n- Managing and maintaining technical documentation and software projects.\n- Collaborating with management and other employees as required.\n- Performing other reasonable duties and responsibilities related to the position as assigned by the Company.",
       "location": "Remote",
-      "technologies": [
-        "Php"
-      ],
+      "technologies": [],
       "visible": true,
       "order": 1
     }
