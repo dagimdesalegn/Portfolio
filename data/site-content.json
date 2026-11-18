@@ -15,6 +15,17 @@
       "technologies": [],
       "visible": true,
       "order": 1
+    },
+    {
+      "id": "608f9ed2-df9c-423b-81ad-35a80f516ddd",
+      "role": "Website developer",
+      "company": "ABJ TUTORIAL ",
+      "period": "2024",
+      "description": "Built a modern student registration platform for tutorial services, integrated with the Verify.et payment verification API. Developed clean and user-friendly student and admin dashboards, implemented secure Cloudflare Turnstile protection, and resolved various issues to improve the website’s performance, reliability, and user experience.",
+      "location": "Contract ",
+      "technologies": [],
+      "visible": true,
+      "order": 2
     }
   ],
   "certificates": [
