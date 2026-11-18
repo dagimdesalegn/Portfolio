@@ -3,9 +3,9 @@ import { ArrowDownToLine, Github, Instagram, Linkedin, Twitter } from "lucide-re
 
 const socials = [
   { label: "GitHub", href: "https://github.com/dagimdesalegn", icon: Github },
-  { label: "LinkedIn", href: "https://www.linkedin.com/", icon: Linkedin },
-  { label: "X", href: "https://x.com/", icon: Twitter },
-  { label: "Instagram", href: "https://instagram.com/", icon: Instagram },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/dagimdesu/", icon: Linkedin },
+  { label: "X", href: "https://x.com/dagim__desalegn/", icon: Twitter },
+  { label: "Instagram", href: "https://www.instagram.com/dagiiyo/", icon: Instagram },
 ];
 
 export default function Hero() {
