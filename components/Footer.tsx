@@ -3,9 +3,9 @@ import { Github, Instagram, Linkedin, Twitter } from "lucide-react";
 
 const socials = [
   { label: "GitHub", href: "https://github.com/dagimdesalegn", icon: Github },
-  { label: "LinkedIn", href: "https://www.linkedin.com/", icon: Linkedin },
-  { label: "X", href: "https://x.com/", icon: Twitter },
-  { label: "Instagram", href: "https://instagram.com/", icon: Instagram },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/dagimdesu/", icon: Linkedin },
+  { label: "X", href: "https://x.com/dagim__desalegn/", icon: Twitter },
+  { label: "Instagram", href: "https://www.instagram.com/dagiiyo/", icon: Instagram },
 ];
 
 export default function Footer() {
@@ -40,7 +40,6 @@ export default function Footer() {
         </div>
         <div className="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} Dagim Desalegn</span>
-          <span>Made with care · Ethiopia</span>
         </div>
       </div>
     </footer>
