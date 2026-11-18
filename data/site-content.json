@@ -2,7 +2,7 @@
   "about": {
     "eyebrow": "About me",
     "title": "A developer focused on useful, thoughtful products.",
-    "body": "Write your personal story here. This section is ready for you to replace with your own words."
+    "body": "I’m Dagim Desalegn, a Full-Stack Developer from Ethiopia. I enjoy building useful digital products that are clear, reliable, and actually solve real problems.\n\nI graduated in Computer Science from Jimma University and have worked on projects like Erdataye, an emergency service app for rapid ambulance dispatch and live tracking, and ABJ Tutorial, an educational platform that has helped thousands of students. I’ve also completed certifications in web development, programming fundamentals, and AI.\n\nI care about thoughtful interfaces, clean code, and building things that make life a little easier for people."
   },
   "experience": [
     {
@@ -17,6 +17,17 @@
       ],
       "visible": true,
       "order": 1
+    },
+    {
+      "id": "aa091721-5f74-4233-a019-d3699a5d2c6f",
+      "role": "",
+      "company": "",
+      "period": "",
+      "description": "",
+      "location": "",
+      "technologies": [],
+      "visible": true,
+      "order": 2
     }
   ],
   "certificates": [
