@@ -29,6 +29,18 @@
       "credentialId": "",
       "visible": true,
       "order": 1
+    },
+    {
+      "id": "85dab3d2-c196-43e0-a63b-52aae3c227de",
+      "title": "Build Responsive Real-World Websites with HTML and CSS",
+      "issuer": "Udemy",
+      "description": "I have acquired the skills necessary to build responsive websites using HTML, CSS, and JavaScript. Furthermore, this course provided me with a foundational understanding of web development.",
+      "date": "March 2024",
+      "credentialId": "UC-d1009af4-447a-4841-b5ca-0204705c75df",
+      "credentialUrl": "",
+      "imageUrl": "https://raw.githubusercontent.com/dagimdesalegn/Portfolio/main/public/assets/certificates/1795024194792-1000061366.jpg",
+      "visible": true,
+      "order": 2
     }
   ]
 }
