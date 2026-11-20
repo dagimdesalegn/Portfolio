@@ -186,6 +186,7 @@ body {
   .about-reveal,.experience-card,.admin-content-card { animation:none; }
   .about-card,.experience-card,.certificate-card,.admin-add-card,.admin-primary,.admin-secondary { transition:none; }
 }
+<<<<<<< HEAD
 
 
 /* Portfolio visual system */
@@ -250,3 +251,5 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .project-card, .footer-reveal { animation: none; }
 }
+=======
+>>>>>>> a553802073d500abc7ec9cfcbfa784dad1c23580

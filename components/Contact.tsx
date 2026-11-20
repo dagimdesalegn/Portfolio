@@ -17,8 +17,13 @@ export default function Contact({ submitContact }: ContactProps) {
   }
 
   return (
+<<<<<<< HEAD
     <section id="contact" className="site-section site-section-contact relative overflow-hidden py-20 sm:py-24">
       <div className="mx-auto max-w-4xl rounded-[2.2rem] border border-habesha-gold/30 bg-white/75 p-1 shadow-tibeb backdrop-blur">
+=======
+    <section id="contact" className="ethiopian-section relative mx-auto max-w-7xl px-5 py-20 sm:px-7 sm:py-24">
+      <div className="mx-auto max-w-4xl rounded-[2rem] border border-habesha-gold/30 bg-white/55 p-1 shadow-tibeb">
+>>>>>>> a553802073d500abc7ec9cfcbfa784dad1c23580
         <div className="rounded-[1.7rem] bg-background/90 p-6 sm:p-9 lg:p-11">
           <div className="max-w-2xl">
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-terracotta">Contact</p>

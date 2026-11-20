@@ -3,7 +3,11 @@ import type { Experience as ExperienceItem } from "@/lib/content";
 
 export default function Experience({ items }: { items: ExperienceItem[] }) {
   return (
+<<<<<<< HEAD
     <section id="experience" className="site-section site-section-experience relative overflow-hidden py-20 sm:py-28">
+=======
+    <section id="experience" className="ethiopian-section relative mx-auto max-w-7xl px-5 py-20 sm:px-7 sm:py-28">
+>>>>>>> a553802073d500abc7ec9cfcbfa784dad1c23580
       <div className="mb-10 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
         <div className="max-w-2xl">
           <p className="text-xs font-black uppercase tracking-[0.24em] text-terracotta">Experience</p>
@@ -20,10 +24,17 @@ export default function Experience({ items }: { items: ExperienceItem[] }) {
           <p className="mx-auto mt-2 max-w-lg text-sm leading-7 text-foreground/50">Use the private admin panel to add your experience entries.</p>
         </div>
       ) : (
+<<<<<<< HEAD
         <div className="relative mx-auto grid max-w-7xl gap-5 px-5 lg:grid-cols-2 sm:px-7">
           <div className="experience-line pointer-events-none absolute left-6 top-0 hidden h-full w-px bg-gradient-to-b from-habesha-gold/0 via-habesha-gold/45 to-habesha-gold/0 lg:block" />
           {items.map((item, index) => (
             <article key={item.id} className="experience-card card-lift group relative rounded-[2rem] border border-habesha-gold/30 bg-white/80 p-1 shadow-tibeb backdrop-blur" style={{ animationDelay: `${index * 90}ms` }}>
+=======
+        <div className="relative grid gap-5 lg:grid-cols-2">
+          <div className="experience-line pointer-events-none absolute left-6 top-0 hidden h-full w-px bg-gradient-to-b from-habesha-gold/0 via-habesha-gold/45 to-habesha-gold/0 lg:block" />
+          {items.map((item, index) => (
+            <article key={item.id} className="experience-card card-lift group relative rounded-[2rem] border border-habesha-gold/30 bg-white/75 p-1 shadow-tibeb" style={{ animationDelay: `${index * 90}ms` }}>
+>>>>>>> a553802073d500abc7ec9cfcbfa784dad1c23580
               <div className="tibeb-grid h-full rounded-[1.75rem] bg-background/90 p-6 sm:p-8">
                 <div className="flex items-start justify-between gap-4">
                   <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-adwa-green text-habesha-gold shadow-sm">

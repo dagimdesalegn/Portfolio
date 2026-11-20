@@ -14,8 +14,12 @@
     "lucide-react": "^0.468.0",
     "next": "^14.2.31",
     "react": "^18.3.1",
+<<<<<<< HEAD
     "react-dom": "^18.3.1",
     "@vercel/analytics": "^1.5.0"
+=======
+    "react-dom": "^18.3.1"
+>>>>>>> a553802073d500abc7ec9cfcbfa784dad1c23580
   },
   "devDependencies": {
     "@types/node": "^20.17.24",
