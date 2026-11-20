@@ -24,11 +24,8 @@ function ProjectPreview({ project }: { project: GithubProject }) {
 
 export default function Projects({ projects }: { projects: GithubProject[] }) {
   return (
-<<<<<<< HEAD
     <section id="projects" className="site-section site-section-projects relative overflow-hidden py-24 sm:py-28">
-=======
     <section id="projects" className="ethiopian-section relative mx-auto max-w-7xl px-5 py-24 sm:px-7">
->>>>>>> a553802073d500abc7ec9cfcbfa784dad1c23580
       <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.24em] text-terracotta">Selected work</p>
@@ -54,15 +51,12 @@ export default function Projects({ projects }: { projects: GithubProject[] }) {
           </p>
         </div>
       ) : (
-<<<<<<< HEAD
         <div className="mx-auto grid max-w-7xl auto-rows-[minmax(250px,auto)] grid-cols-1 gap-5 px-5 md:grid-cols-2 lg:grid-cols-3 sm:px-7">
           {projects.map((project, index) => (
             <article key={project.id} className={`${index % 5 === 0 ? "md:col-span-2" : ""} project-card group relative flex min-h-[280px] flex-col overflow-hidden rounded-[2rem] border border-habesha-gold/30 bg-white/80 p-4 shadow-tibeb backdrop-blur transition duration-300 hover:-translate-y-1.5 hover:border-terracotta/50 hover:shadow-[0_24px_70px_rgba(30,58,50,.14)] sm:p-5`}>
-=======
         <div className="grid auto-rows-[minmax(250px,auto)] grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <article key={project.id} className={`${index % 5 === 0 ? "md:col-span-2" : ""} group relative flex min-h-[280px] flex-col overflow-hidden rounded-[1.8rem] border border-habesha-gold/30 bg-white/65 p-6 shadow-tibeb transition duration-300 hover:-translate-y-1.5 hover:border-terracotta/50 hover:shadow-[0_20px_60px_rgba(30,58,50,.13)]`}>
->>>>>>> a553802073d500abc7ec9cfcbfa784dad1c23580
               <div className="relative aspect-[16/9] overflow-hidden rounded-[1.35rem] border border-habesha-gold/20 bg-white">
                 <ProjectPreview project={project} />
                 <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-adwa-green/55 to-transparent" />

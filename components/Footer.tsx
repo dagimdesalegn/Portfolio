@@ -1,9 +1,6 @@
 import Image from "next/image";
-<<<<<<< HEAD
 import { ArrowUpRight, Github, Instagram, Linkedin, Twitter } from "lucide-react";
-=======
 import { Github, Instagram, Linkedin, Twitter } from "lucide-react";
->>>>>>> a553802073d500abc7ec9cfcbfa784dad1c23580
 
 const socials = [
   { label: "GitHub", href: "https://github.com/dagimdesalegn", icon: Github },
@@ -12,7 +9,6 @@ const socials = [
   { label: "Instagram", href: "https://www.instagram.com/dagiiyo/", icon: Instagram },
 ];
 
-<<<<<<< HEAD
 const navigation = [
   ["Home", "#top"],
   ["About", "#about"],
@@ -22,13 +18,10 @@ const navigation = [
   ["Contact", "#contact"],
 ];
 
-=======
->>>>>>> a553802073d500abc7ec9cfcbfa784dad1c23580
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-habesha-gold/30 bg-adwa-green text-white">
       <div className="absolute inset-0 tibeb-grid-dark opacity-30" />
-<<<<<<< HEAD
       <div className="absolute -right-32 top-0 h-72 w-72 rounded-full border border-habesha-gold/10" />
       <div className="relative mx-auto max-w-7xl px-5 py-12 sm:px-7 sm:py-16">
         <div className="grid gap-8 lg:grid-cols-[1.3fr_.7fr_.7fr] lg:gap-14">
@@ -89,7 +82,6 @@ export default function Footer() {
         <div className="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-[10px] font-semibold uppercase tracking-[0.12em] text-white/30 sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} Dagim Desalegn</span>
           <span>Built with Next.js · Designed with purpose</span>
-=======
       <div className="relative mx-auto max-w-7xl px-5 py-12 sm:px-7">
         <div className="grid gap-10 md:grid-cols-[1.2fr_.8fr_.8fr]">
           <div>
@@ -118,7 +110,6 @@ export default function Footer() {
         </div>
         <div className="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} Dagim Desalegn</span>
->>>>>>> a553802073d500abc7ec9cfcbfa784dad1c23580
         </div>
       </div>
     </footer>
