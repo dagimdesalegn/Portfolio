@@ -27,11 +27,7 @@ function CertificatePreview({ item }: { item: Certificate }) {
 
 export default function Certificates({ items }: { items: Certificate[] }) {
   return (
-<<<<<<< HEAD
     <section id="certificates" className="site-section site-section-certificates relative overflow-hidden py-20 sm:py-28">
-=======
-    <section id="certificates" className="ethiopian-section relative mx-auto max-w-7xl px-5 py-20 sm:px-7 sm:py-28">
->>>>>>> a553802073d500abc7ec9cfcbfa784dad1c23580
       <div className="mb-10 max-w-2xl">
         <p className="text-xs font-black uppercase tracking-[0.24em] text-terracotta">Credentials</p>
         <h2 className="mt-2 font-heading text-3xl font-bold tracking-tight text-adwa-green sm:text-4xl">Certifications & awards</h2>
@@ -44,15 +40,9 @@ export default function Certificates({ items }: { items: Certificate[] }) {
           <p className="mx-auto mt-2 max-w-lg text-sm leading-7 text-foreground/50">Add certificates from the private admin panel.</p>
         </div>
       ) : (
-<<<<<<< HEAD
         <div className="mx-auto grid max-w-7xl gap-5 px-5 sm:grid-cols-2 lg:grid-cols-3 sm:px-7">
           {items.map(item => (
             <article key={item.id} className="certificate-card group overflow-hidden rounded-[2rem] border border-habesha-gold/30 bg-white/85 shadow-tibeb backdrop-blur">
-=======
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map(item => (
-            <article key={item.id} className="certificate-card group overflow-hidden rounded-[2rem] border border-habesha-gold/30 bg-white/75 shadow-tibeb">
->>>>>>> a553802073d500abc7ec9cfcbfa784dad1c23580
               <a href={item.credentialUrl || item.imageUrl || "#"} target="_blank" rel="noreferrer" className="block">
                 <div className="relative aspect-[4/3] overflow-hidden bg-adwa-green">
                   <CertificatePreview item={item} />
