@@ -1,0 +1,69 @@
+{
+  "about": {
+    "eyebrow": "About me",
+    "title": "Junior Full-Stack Developer",
+    "body": "I’m Dagim Desalegn, a Junior Full-Stack Developer from Ethiopia. I enjoy building useful digital products that are clear, reliable, and actually solve real problems.\n\nI graduated in Computer Science from Jimma University and have worked on projects like Erdataye, an emergency service app for rapid ambulance dispatch and live tracking, and ABJ Tutorial, an educational platform that has helped thousands of students. I’ve also completed certifications in web development, programming fundamentals, and AI.\n\nI care about thoughtful interfaces, clean code, and building things that make life a little easier for people."
+  },
+  "experience": [
+    {
+      "id": "08e6d478-09fb-4fd9-bb78-8e669a9c30ce",
+      "role": "Software engineer ",
+      "company": "Yosti Import and Export Trading Co.",
+      "period": "September 2026",
+      "description": "As a Software Developer, the Employee is responsible for designing, developing, testing, and maintaining software applications; developing and maintaining backend systems, databases, and APIs; maintaining Company websites and digital platforms; troubleshooting and resolving technical issues; ensuring system security, performance, and reliability; and performing other related duties as assigned by the Company.",
+      "location": "Remote",
+      "technologies": [],
+      "visible": true,
+      "order": 1
+    },
+    {
+      "id": "608f9ed2-df9c-423b-81ad-35a80f516ddd",
+      "role": "Website developer",
+      "company": "ABJ TUTORIAL ",
+      "period": "2024",
+      "description": "Built a modern student registration platform for tutorial services, integrated with the Verify.et payment verification API. Developed clean and user-friendly student and admin dashboards, implemented secure Cloudflare Turnstile protection, and resolved various issues to improve the website’s performance, reliability, and user experience.",
+      "location": "Contract ",
+      "technologies": [],
+      "visible": true,
+      "order": 2
+    }
+  ],
+  "certificates": [
+    {
+      "id": "3eda8b11-5dc0-480b-9b5c-1076509d9ecb",
+      "title": "Introduction to Artificial Intelligence (AI)",
+      "issuer": "IBM",
+      "date": "March 2025",
+      "imageUrl": "https://raw.githubusercontent.com/dagimdesalegn/Portfolio/main/public/assets/certificates/1795003182136-1000060653.jpg",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/K58T5HUXH54D",
+      "description": "Completed an IBM course covering AI fundamentals, key concepts, applications, and real-world use cases.",
+      "credentialId": "",
+      "visible": true,
+      "order": 1
+    },
+    {
+      "id": "85dab3d2-c196-43e0-a63b-52aae3c227de",
+      "title": "Build Responsive Real-World Websites with HTML and CSS",
+      "issuer": "Udemy",
+      "description": "I have acquired the skills necessary to build responsive websites using HTML, CSS, and JavaScript. Furthermore, this course provided me with a foundational understanding of web development.",
+      "date": "March 2024",
+      "credentialId": "UC-d1009af4-447a-4841-b5ca-0204705c75df",
+      "credentialUrl": "https://www.udemy.com/certificate/UC-d1009af4-447a-4841-b5ca-0204705c75df",
+      "imageUrl": "https://raw.githubusercontent.com/dagimdesalegn/Portfolio/main/public/assets/certificates/1795024194792-1000061366.jpg",
+      "visible": true,
+      "order": 2
+    },
+    {
+      "id": "a4c60f22-13f6-40e9-8f88-34e9749772d5",
+      "title": "Certificate of Achievement",
+      "issuer": "JIMMA UNIVERSITY ",
+      "description": "For securing First (1st) Place in the Final Year Project Competition, Department of Computer Science, in recognition of outstanding innovation and excellence.\n\nProject Title: Ambulance Service App for Ethiopian Urban Area (Erdataye)\n\n",
+      "date": "26/06/2026",
+      "credentialId": "",
+      "credentialUrl": "",
+      "imageUrl": "https://raw.githubusercontent.com/dagimdesalegn/Portfolio/main/public/assets/certificates/1795025185262-1000061369.jpg",
+      "visible": true,
+      "order": 1
+    }
+  ]
+}
