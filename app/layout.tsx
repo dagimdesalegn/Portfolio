@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+<<<<<<< HEAD
 import { Analytics } from "@vercel/analytics/next";
+=======
+>>>>>>> a553802073d500abc7ec9cfcbfa784dad1c23580
 import { Inter, Noto_Sans_Ethiopic, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
@@ -45,7 +48,10 @@ export default function RootLayout({
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable} ${notoEthiopic.variable}`}>
       <body className="bg-background font-body text-foreground antialiased">
         {children}
+<<<<<<< HEAD
         <Analytics />
+=======
+>>>>>>> a553802073d500abc7ec9cfcbfa784dad1c23580
       </body>
     </html>
   );
